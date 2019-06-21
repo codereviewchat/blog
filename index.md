@@ -6,10 +6,10 @@ layout: home
 ---
 
 <h1>Let's Chat About Code Reviews!</h1>
-
+<br />
 Hello there! 👋
 
-If you stumbled onto this site while on a quest to get better at reviewing code, you came to the right place! Here we share our knowledge and lessons learned while reviewing code in teams of various sizes in the past 10 years.
+Welcome to the codereview.chat blog, where we chat and discuss how to do good code reviews. I'll be sharing lessons learned from the last decade of reviewing code for teams of various sizes.
 
 The content is aimed at beginners just starting out on their journey of writing code in a team setting, but most posts should also be interesting to seasoned veterans trying to tighten the feedback loop between developers in their team.
 
