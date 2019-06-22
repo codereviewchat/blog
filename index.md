@@ -9,8 +9,9 @@ layout: home
 <br />
 Hello there! 👋
 
-Welcome to the codereview.chat blog, where we chat and discuss how to do good code reviews. I'll be sharing lessons learned from the last decade of reviewing code for teams of various sizes.
+Welcome to the codereview.chat blog, where we chat and discuss how to do good code reviews. I'll be sharing my lessons learned from the last decade of reviewing code on teams of various sizes.
 
-The content is aimed at beginners just starting out on their journey of writing code in a team setting, but most posts should also be interesting to seasoned veterans trying to tighten the feedback loop between developers in their team.
+If you are interested in improving your code reviews please sign up to the mailing list below and if you have any questions or suggestions, don't hesitate to reach out at <a href="mailto:hi@codereview.chat">hi@codereview.chat</a>.
 
-Happy reading and if you have any questions or suggestions, don't hesitate to reach out at <a href="mailto:hi@codereview.chat">hi@codereview.chat</a>.
+**The first post will be shared in the next week or two.**
+<br />
