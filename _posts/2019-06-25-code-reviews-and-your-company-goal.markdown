@@ -53,7 +53,7 @@ During my career I have heard the following phrase multiple times:
 
 But if you are looking at code reviews from the standpoint of the value that they bring to the company, detecting issues early is probably the biggest impact that a code review can make. It's definitely the only thing that the users will notice!
 
-Even if you have an amazing QA team that makes sure that bugs don't get deployed to production, there is still value of finding bugs during the code review process. Fixing the bug found during code review will be much easier and quicker as it will require less people to be involved. You might not even need a Jira ticket for it! This will increase your turnaround time and make sure users get your new feature sooner. Quick turnaround time adds value to your company.
+Even if you have an amazing QA team that makes sure that bugs don't get deployed to production, there is still the value of finding bugs during the code review process. Fixing the bug found during code review will be much easier and quicker as it will require fewer people to be involved. You might not even need a Jira ticket for it! This will increase your turnaround time and make sure users get your new feature sooner. Quick turnaround time adds value to your company.
 
 Finding bugs is extremely important, but as a reviewer you also shouldn't spend hours reviewing the code and trying out every edge case by hand. Instead, what you should do is focus on finding bugs when reading through the code as opposed to focusing on styling issues.
 
