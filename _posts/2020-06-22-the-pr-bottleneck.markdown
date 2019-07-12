@@ -24,7 +24,7 @@ After the first review is posted there is almost always a bit of wait time again
 
 This process can go on for multiple cycles and every handoff adds another bit of wait time. This is how a simple feature that was ready 2 weeks ago still has a pull request open and hasn't shipped yet.
 
-The wait time is especially painful for us programmers because after each wait time, the context is lost and needs to be rebuilt again from scratch. The longer the wait time the more difficult it is to remember how all the line changes fit together into the shippable feature.
+The wait time is especially painful for us programmers because, after each wait time, the context is lost and needs to be rebuilt again from scratch. The longer the wait time the more difficult it is to remember how all the line changes fit together into the shippable feature.
 
 # The Solution
 
@@ -34,7 +34,7 @@ When a pull request is ready for review, the reviewers should drop everything an
 
 When a pull request is reviewed and needs updates, the author should drop everything and focus on responding to comments. Again trying to limit the wait time to minutes and not hours if possible. If the review requires a substantial amount of code changes you should discuss it with reviewers to make sure these changes will bring business value to customers.
 
-The "drop everything because of code reviews" rule is counter intuitive for us developers, because we like to be in the flow and don't want to break out of it for whatever reason. This is how we feel productive. Code reviews don't make us feel productive because we will not be credited when the feature ships. Usually it's the author that will take all the credit.
+The "drop everything because of code reviews" rule is counter-intuitive for us developers, because we like to be in the flow and don't want to break out of it for whatever reason. This is how we feel productive. Code reviews don't make us feel productive because we will not be credited when the feature ships. Usually, it's the author that will take all the credit.
 
 If you follow the rule of code reviews being the top priority your personal productivity will fall and you will not feel good about it.
 
@@ -42,10 +42,10 @@ If you follow the rule of code reviews being the top priority your personal prod
 
 The harsh reality is that your personal productivity is not even remotely as important as the productivity of your whole team. Your team is most productive when it's shipping features to your users. When a feature is ready for code review the developer is saying it's ready to be deployed to production. Your team's most important goal at this point is to verify if this is true and do everything possible to get it out the door.
 
-Anything other than doing the code review is counter productive for your team. If you spend the rest of the day working on your feature instead of reviewing a pull request from your coworker, you're blocking a feature from being deployed and even worse, you are creating a new bottleneck and creating more work in progress which will cause even more context switching. This is how pull requests pile up and feature velocity plummets.
+Anything other than doing the code review is counterproductive for your team. If you spend the rest of the day working on your feature instead of reviewing a pull request from your coworker, you're blocking a feature from being deployed and even worse, you are creating a new bottleneck and creating more work in progress which will cause even more context switching. This is how pull requests pile up and feature velocity plummets.
 
-It's absolutely crucial to make the code reviews the top priority. When a code review comes in stop all other non productive activity - which is pretty much anything except maybe firefighting a production issue affecting your customers.
+It's absolutely crucial to make the code reviews the top priority. When a code review comes in you need to stop all other nonproductive activity - which is pretty much anything except maybe firefighting a production issue affecting your customers.
 
 You will be my hero if you say that the current meeting needs to end earlier because you need to go review a pull request that was just marked as ready for review. 🤙
 
-In the next blog post we'll take a look at some techniques you can use to make it possible to review and merge as quickly as possible. Spoiler: it's all about reducing the batch size!
+In the next blog post, we'll take a look at some techniques you can use to make it possible to review and merge as quickly as possible. Spoiler: it's all about reducing the batch size!
