@@ -10,10 +10,10 @@ The popularity of code reviews is due to the fact that they bring multiple benef
 
 1. Ability to catch code defects before the code is shipped to QA or prod.
 2. Sharing knowledge with the team.
-3. Increase sense of mutual responsibility.
+3. Increase a sense of mutual responsibility.
 4. Improve code quality.
 
-Due to all these benefits, we engineers probably all agree that code reviews are necessary to ship stable code to production. But as engineers we also need to keep in mind how our processes affect our companies. It's important that we ask ourselves how the code review process helps our companies achieve their goal.
+Due to all these benefits, we engineers probably all agree that code reviews are necessary to ship stable code to production. But as engineers, we also need to keep in mind how our processes affect our companies. It's important that we ask ourselves how the code review process helps our companies achieve their goal.
 
 ## The Goal
 
@@ -53,23 +53,23 @@ But if you are looking at code reviews from the standpoint of the value that the
 
 Even if you have an amazing QA team that makes sure that bugs don't get deployed to production, there is still the value of finding bugs during the code review process. Fixing the bug found during code review will be much easier and quicker as it will require fewer people to be involved. You might not even need a Jira ticket for it! This will increase your turnaround time and make sure users get your new feature sooner. Quick turnaround time adds value to your company.
 
-Finding bugs is extremely important, but as a reviewer you also shouldn't spend hours reviewing the code and trying out every edge case by hand. Instead, what you should do is focus on finding bugs when reading through the code as opposed to focusing on styling issues.
+Finding bugs is extremely important, but as a reviewer, you also shouldn't spend hours reviewing the code and trying out every edge case by hand. Instead, what you should do is focus on finding bugs when reading through the code as opposed to focusing on styling issues.
 
-Take special care when you see branches in the code path, ask yourself if both branches are covered by tests. Also pay attention if the author forgot to handle an error case. When you see something that you think _might_ cause a bug, ask the author to write a test to cover that edge case.
+Take special care when you see branches in the code path, ask yourself if both branches are covered by tests. Also, pay attention if the author forgot to handle an error case. When you see something that you think _might_ cause a bug, ask the author to write a test to cover that edge case.
 
 According to the company's goal, finding bugs early at the very least allows us to fix defects sooner, allowing us to deploy the new feature to the customers faster. It also helps make sure you don't slip a bug through the cracks and push it to production where it might annoy your users. From this perspective, finding a bug during the code review process is probably the most productive thing that you can do for your company.
 
 ## 2. Share knowledge with the team
 
-Every code review is a chance to learn something new. Both for the author of the code and for the reviewers. As a reviewer you can learn how other people on your team solve problems. As the author you get feedback on your work which is crucial for self improvement.
+Every code review is a chance to learn something new. Both for the author of the code and for the reviewers. As a reviewer, you can learn how other people on your team solve problems. As the author, you get feedback on your work which is crucial for self-improvement.
 
 How does sharing knowledge help the goal of your company? It does very little to impact the users directly so this aspect of code reviews is in my opinion not as important as the one described in the previous chapter.
 
-But sharing knowledge still helps your company as it reduces the bus factor - the measurement of the risk resulting from information and capabilities not being shared among team members. It also integrates learning and self improvement into your engineering process which is crucial for your company to grow.
+But sharing knowledge still helps your company as it reduces the bus factor - the measurement of the risk resulting from information and capabilities not being shared among team members. It also integrates learning and self-improvement into your engineering process which is crucial for your company to grow.
 
 So make sure you look for ways to share knowledge when doing code reviews, but only after you are sure that you can't find any defects with the code.
 
-## 3. Increase sense of mutual responsibility
+## 3. Increase a sense of mutual responsibility
 
 Your whole team needs to own their code collectivity. If a single person is responsible for a part of the system it's a risk for your business as that person will be the bottleneck for every new feature that touches that part of the system. Bottlenecks like this can bring your feature velocity to a standstill, so it's always a good idea to see if you can reduce them.
 
@@ -79,18 +79,18 @@ This doesn't directly impact the company's goal, but it can still have a huge im
 
 Code reviews are a good way to catch little improvements to the code. It feels great when you point out that a few lines of code can be deleted because there is already an existing function that does the same thing.
 
-But be careful, being overly pedantic about every little style issue can have negative impacts to the productivity of your team!
+But be careful, being overly pedantic about every little style issue can have negative impacts on the productivity of your team!
 
 I have seen requesting a whitespace delay the new feature from shipping for a few weeks because the change request made it miss the release window. Be mindful of how much company value is gained by making code style comments and perhaps rather invest some time to automate this into your test suite or the use of an autoformatter.
 
-Try to make sure code style issues are detected automatically, without human interaction. After that point comment on styling issues only when there are no bugs to point out or there is no way to share knowledge.
+Try to make sure code style issues are detected automatically, without human interaction. After that only mention styling issues only when there are no bugs to point out or there is no way to share knowledge. And if the reviewer doesn't agree with the change, don't persist.
 
 ## Conclusion
 
-Be mindful of the company goal when doing code reviews. Ask yourself how much value your code review comment brings to the table. If you are asking to change some whitespace, the value will be very small. If you are asking to change code that might misbehave under certain conditions exposing sensitive customer data, the value will be huge.
+Be mindful of the company goal when doing code reviews. Ask yourself how much value your code review comment brings to the table. If you are asking to change some whitespace, the value will be very small. If you are asking to change the code that might misbehave under certain conditions exposing sensitive customer data, the value will be huge.
 
-When doing code reviews, try to write more comments with higher value than lower value.
+When doing code reviews, try to write more comments with a higher value than lower value.
 
 Learned something new? Be sure to share what you've learned with your team. Sharing knowledge is one of the most important parts of your job 😉
 
-In the next blog post I'll talk about how to make sure code reviews have as little impact on feature velocity as possible. Sign up below to get the article in your inbox as soon as it's ready.
+In the next blog post, I'll talk about how to make sure code reviews have as little impact on feature velocity as possible. Sign up below to get the article in your inbox as soon as it's ready.
