@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Code reviews and your company goal"
+title: "Code Reviews and the Company Goal"
 date: 2019-06-27 12:39:52 +0800
 ---
 
