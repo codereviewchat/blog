@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Code Review Bottleneck"
-date: 2019-07-15 10:00:00 +0000
+date: 2019-07-15 8:00:00 +0000
 ---
 
 Code reviews are [insanely useful](https://blog.codereview.chat/2019/06/27/code-reviews-and-your-company-goal.html). The only problem is that they have the nasty habit of making your cool new feature stuck in the queue waiting for reviewers. Let's take a look at how to make sure code reviews are done as efficiently as possible. Let's see how we can do quality code reviews without impeding feature velocity.
@@ -51,3 +51,5 @@ It's absolutely crucial to make the code reviews the top priority. When a code r
 You will be my hero if you say that the current meeting needs to end earlier because you need to go review a newly opened pull request. 🤙
 
 In the next blog post, we'll take a look at some techniques you can use to make it possible to review and merge pull requests as quickly as possible. Spoiler: it's all about reducing the batch size!
+
+Discuss this post on [hacker news](https;//)
