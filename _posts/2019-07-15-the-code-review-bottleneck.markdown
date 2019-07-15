@@ -52,4 +52,4 @@ You will be my hero if you say that the current meeting needs to end earlier bec
 
 In the next blog post, we'll take a look at some techniques you can use to make it possible to review and merge pull requests as quickly as possible. Spoiler: it's all about reducing the batch size!
 
-Discuss this post on [hacker news](https;//)
+Discuss this post on [hacker news](https://news.ycombinator.com/item?id=20438954).
