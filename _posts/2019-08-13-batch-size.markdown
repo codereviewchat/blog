@@ -4,64 +4,50 @@ title: "The Code Review Batch Size"
 date: 2019-08-13 8:00:00 +0000
 ---
 
-In the [last article](https://blog.codereview.chat/2019/07/15/the-code-review-bottleneck.html) we learned how important it is to reduce the friction in code reviews, by making code reviews your top priority. Quick recap: based on the theory of constraints, when your bottleneck is over capacity, doing work in other places will be counterproductive. If your code review queue is backed up, writing more code will only make matters worse.
+In the [last article](https://blog.codereview.chat/2019/07/15/the-code-review-bottleneck.html) we learned how important it is to reduce the friction in code reviews, by making code reviews your top priority. Based on the [theory of constraints](https://en.wikipedia.org/wiki/Theory_of_constraints), not working on the bottleneck is counterproductive. If your code review queue is backed up, writing more code will not make you deploy features any faster!
 
-The theory of constraints has a solution for increasing throughtput. Decrease your batch size as possible. For us developers the batch size is the number of features that we put into each release or if we are agile and only release one feature per release, the amount of code released for said feature.
+The theory of constraints has a solution for increasing throughput: Decrease your batch size as much as possible. For us developers, the batch size is the number of code changes that go into each release.
 
-If you are reviewing and deploying multiple features in batch because it sounds like this will increase productivity you are doing the exact opposite. By batching features together you prevent small changes from going out while the issues with the bigger changes are being worked out. This is how you end up on a release schedule that takes months is always late and causes havoc when deployed to production in the form of blocker bugs.
+If you are reviewing, testing, and deploying multiple thousands of line changes in order to save time and increase feature velocity the result you'll get might be the exact opposite. By batching so many changes and features together you increase the lead time for each change. Lead time is one of the four key software delivery metrics according to [Accelerate 2018](https://www.goodreads.com/en/book/show/35747076-accelerate) (other 3 are deployment frequency, time to restore service and change failure rate) and is closely correlated with company performance.
+
+Putting it plainly, your big releases prevent small fixes and changes from going out sooner. Bigger releases require more testing, more preparation for deployment and it makes the process even slower. This is how you end up on a release schedule that can take months, is always late, and causes havoc when deployed to production in the form of blocker bugs.
+
+Let's focus on the code review side of things and take a look at why big pull requests are never desired. 
 
 # Problem with big pull requests
 
-We developers have this joke that a 5 line pull request will have at least 5 comments and change requests while a 500 line pull request will only have 1: LGTM.
+Developers have this joke that a 5 line pull request will have at least 5 comments or change requests while a 1000 line pull request will be accepted immediately with the words LGTM (looks good to me).
 
-This is due to the fact that to understand those 500 lines the reviewer needs to take a lot of time to write thoughtful comments and often the sheer size of the changes can demotivate them from doing a good job.
+This is because understanding those 1000 lines, the reviewer needs to invest a lot of their own time to fully understand the scope of the changes. Those 1000 lines could even be too much for any reviewer to fully comprehend since the amount of things that a human brain can keep track of is limited to [about 7 items](https://phys.org/news/2009-11-brain-magic.html). Often the sheer size of the changes will at the very least can demotivate the reviewer from doing a good job.
 
-# Batching features
+It's often the case that those 1000 lines or more don't change just one aspect of the system. They are usually a group of changes combined to form a whole. Grouping them might be an efficient way for the developer to write these changes, but usually isn't an efficient way to review, test or deploy them.
 
-If this sounds familiar then the first way to improve your throughtput and regain your sanity is to split features into separate code reviews and then releases.
+Let's take a look at how big pull requests can be broken down into smaller ones that are easier to review, test, and deploy.
 
-You can usually notice multiple features in a pull request when the title has the word **and** in it.
+# Avoid batching features in a single pull request
 
-Examples:
+We are often tempted to fix or complete multiple tasks while working on a particular part of the codebase and then combine all those changes in a single pull request. 
 
-Fix production issue *and* improve logging
+An example of this could be a pull request that fixes a production issue *and* improves logging.
 
-Add new form verification *and* handle edge case when the user is not defined
+When reviewing this pull request a potential problem with the code that adds the logging could delay the merge of the code that fixes a production issue. Your users will be stuck with the bug while you are fixing a logging issue that your users don't even know exists. 
 
-When reviewing this code a problem with the code that added logging will delay the merge of the code that fixes a production issue. This is going to be counterproductive especially since your users don't care how you log things.
+When you write *and* in your PR title consider opening two pull requests instead. This will also help the reviewer focus on one problem in the pull request, making it less likely for mistakes to go through.
 
-When you write *and* in your PR titles consider opening two pull requests instead. This will also help the reviewed focus on one problem in the pull request making it less likely for mistakes to go through.
+This point is even more severe if the issue pops up only when the code is deployed. If there is an issue with the logging code, you might have to revert the bugfix as well to resolve the problem.
 
-This rule is even more important when the code gets deployed. If there is something wrong with the code that improved logging you might have to revert the production issue along with the logging change.
+# Small code batches
 
-# Batching code
+If you had been burnt by the issue above and then decided to vigilantly deploy only one feature at a time, you  still occasionally run into issues. Features that are useful to your customers tend not to be just a change to a few lines of code. Instead, they require days or even weeks of work before they become useful.
 
-So you took care of your development process and now only deploy one feature at a time, but are still having issues with big pull requests since features that are useful to your customers tend not be just a change to a few lines of code, but instead require days or even weeks of work to be useful. 
+Checking in code after weeks of work tends to be painful. You'll be working of a feature branch and will need to deal with merges and conflicts. And in the end, you'll have a big merge into your master branch, followed by the big deployment of what was probably months of work put into a feature branch.
 
-Checkin in code after weeks of work tends to be disastrous especially if it's done right before the deadline. The only solution to this is decouple features from our code review and deployment process.
+The only solution to this is to decouple features from code changes.
 
 # Decouple Features From Code Changes
 
-Your code review process should not require you to only start reviewing when the feature is done.
+The only way to address these issues is to avoid having long-running feature branches in the first place. Instead, all the changes should be reviewed and merged into your develop branch as soon as possible. This means deploying code that's not yet ready to be run on production and is therefore hidden from the word in a form of a feature flag.
 
-# A huge Pull Request
+LaunchDarkly raised $44 million this year helping programmers achieve exactly that, but in most cases, a simple ENV variable or a setting flag should be all you need to make sure the feature is not enabled until the last peace is merged and deployed.
 
-The first way to push a big feature into prod is to open a big pull request with 1000s of lines changed. The problem with this is that the code will be hard to review and hard to deploy and you might have bugs popping up in unexpected places.
-
-# Feature Branches
-
-Feature branches allow you to decouple code reviews from the feature itself. You create a new branch and use it for all development for the feature. You can enforce that all changes that go into the feature branch need to be reviewed before the merge.
-
-This helps you improve your code review process, but it has a few unwanted side effects. Feature branches tend to create a big chunk of code with a lot of changes that will probably be extremely difficult and risky to deploy.
-
-Maintaining a feature branch also tends to be painful as changes from the development branch constantly need to be merged in. The more changes the feature branch contains the more frequent merge conflicts happen and the more likely it is that they will be resolved incorrectly, creating bugs in your system.
-
-Lastly, since merges aren't getting deployed, the reviews tend to be more leniant - thinking that issues will be addressed further down the development process of the feature. The problem is that this often doesn't happen and bad poorly reviewed code makes it into produciton.
-
-# Trunk Based Development
-
-The only way to address these issues is to avoid having long running feature branches in the first place. Instead, all the changes should go directly into trunk. This sounds scary since it makes you put unfinished features into production.
-
-This will force you to change the way you write code since it will require you to decouple the code changes from the feature. You will have to use code gating, feature flags and other concept to make sure that the unfinished features won't cause issues when deployed.
-
-But you will make your review process better - the changes going into trunk will be small and easy to review.
+The technique described above is called [Trunk Based Development](https://trunkbaseddevelopment.com/) and it tries to address some issues of the [GitFlow](https://datasift.github.io/gitflow/IntroducingGitFlow.html) development model. Most importantly it helps us reduce the batch size for code reviews and helping us speed up feature lead times.
