@@ -55,3 +55,7 @@ The technique described above is called [Trunk Based Development](https://trunkb
 It isn't perfect, of course. Now that you are merging things into master immediately after review, you might end up with dead code in your codebase when the priorities of the project shift. Even if this code is guarded by feature flags it can still pop up in unexpected ways and cause a production issue if there is a problem with your configuration, so you will need to spend some time every few sprints to clean it up.
 
 Do you have a better way of dealing with big pull requests? Let's continue the discussion on Twitter!
+
+<div style="margin-left: auto; margin-right: auto; width:500px;">
+<blockquote class="twitter-tweet" data-conversation="none" data-dnt="true"><p lang="en" dir="ltr">Do you have a better way of dealing with big pull requests? Let me know!</p>&mdash; Anže Pečar (@Smotko) <a href="https://twitter.com/Smotko/status/1161220082707705857?ref_src=twsrc%5Etfw">August 13, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
