@@ -48,7 +48,7 @@ The only solution to this is to decouple features from code changes.
 
 The only way to address these issues is to avoid having long-running feature branches in the first place. Instead, all the changes should be reviewed and merged into your develop branch as soon as possible. This means deploying code that's not yet ready to be run on production and is therefore hidden from the word in a form of a feature flag.
 
-LaunchDarkly raised $44 million this year helping programmers achieve exactly that, but in most cases, a simple `ENV` variable or a setting flag should be all you need to make sure the feature is not enabled until the last peace is merged and deployed.
+LaunchDarkly raised $44 million this year helping programmers achieve exactly that, but in most cases, a simple `ENV` variable or a setting flag should be all you need to make sure the feature is not enabled until the last piece is merged and deployed.
 
 The technique described above is called [Trunk Based Development](https://trunkbaseddevelopment.com/) and it tries to address some issues of the [GitFlow](https://datasift.github.io/gitflow/IntroducingGitFlow.html) development model. Most importantly it helps us reduce the batch size for code reviews and helping us speed up feature lead times.
 
